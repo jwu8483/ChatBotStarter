@@ -42,12 +42,12 @@ public class ChatBot3
 	 */	
 	public String getGreeting()
 	{
-		return "Hi, what is up?";
+		return "Dam I'm starving, you must be too!";
 	}
 	
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
@@ -58,12 +58,12 @@ public class ChatBot3
 		
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "Did you fall back asleep?";
 		}
 
-		else if (findKeyword(statement, "no") >= 0)
+		else if (findKeyword(statement, "Food") >= 0)
 		{
-			response = "Why so negative?";
+			response = "What food would you like to make?";
                 	emotion--;
 		}
 		
@@ -107,7 +107,7 @@ public class ChatBot3
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
-		int psn = findKeyword (statement, "I want to", 0);
+		int psn = findKeyword (statement, "How do", 0);
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "Why do you want to " + restOfStatement + "?";
 	}
